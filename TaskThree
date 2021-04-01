@@ -1,0 +1,19 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+public class ZadThree {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int numuser = 0;
+		int num = (int)(Math.random()*11);
+		do {
+			System.out.print("Введите число ");
+			numuser = in.nextInt();
+			if (numuser > num) System.out.println("Число меньше");
+			else if (numuser < num) System.out.println("Число больше");
+			else System.out.println("Число угадано");
+		} while (numuser != num);
+		}
+	}
+
