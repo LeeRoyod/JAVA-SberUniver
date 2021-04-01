@@ -1,0 +1,37 @@
+import java.util.*;
+
+public class ZadTwo {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.print("Введите длину рамки ");
+		int dlina = in.nextInt();
+		System.out.print("Введите ширину рамки ");
+		int shirina = in.nextInt();
+		System.out.print("Введите строку ");
+		String str = in.next();
+		//
+		int razmerstr = str.length();
+		for (int i = 0; i<dlina; i++) {
+			if (razmerstr > (shirina-2)) {
+				System.out.print("Ошибка! Строка не вписывается в рамку");
+				break;
+			}
+			if (i == 0 || i == dlina-1) System.out.println(String.format("%"+shirina+"s", "").replace(" ", "*"));
+			else if (i == ((int)dlina/2)) {
+				int sdvig = ((shirina-razmerstr)/2)-1;
+				System.out.print("*");
+				if (sdvig != 0) System.out.print(String.format("%"+(sdvig)+"s", "").replace(" ", " "));
+				System.out.print(str);
+				if (sdvig != 0) System.out.print(String.format("%"+(sdvig)+"s", "").replace(" ", " "));
+				if (((shirina-razmerstr) % 2) != 0) System.out.print(" ");
+				System.out.println("*");
+			}
+			else {
+				System.out.print("*");
+				System.out.print(String.format("%"+(shirina-2)+"s", "").replace(" ", " "));
+				System.out.println("*");
+			}
+		}
+	}
+}
